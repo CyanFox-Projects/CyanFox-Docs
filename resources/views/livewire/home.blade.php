@@ -36,4 +36,10 @@
             <div class="mt-5"></div>
         @endif
     </div>
+
+    @script
+    <script>
+        hljs.highlightAll();
+    </script>
+    @endscript
 </div>

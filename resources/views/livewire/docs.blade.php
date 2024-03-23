@@ -30,4 +30,10 @@
             @endif
         @endif
     </div>
+
+    @script
+    <script>
+        hljs.highlightAll();
+    </script>
+    @endscript
 </div>
