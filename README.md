@@ -1,7 +1,7 @@
 # CyanFox-Docs
 
 ## Documentation
-You can find the documentation [here](https://docs.cyanfox.de/docs/cyanfox-docs). (Work in progress)
+You can find the documentation [here](https://docs.cyanfox.de/docs/cyanfox-docs).
 
 ## Support
 You can get support on the [CyanFox Discord](https://discord.cyanfox.de).
