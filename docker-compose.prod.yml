@@ -20,17 +20,3 @@ services:
       - ./:/var/www
     ports:
       - 80:80
-
-  # MySQL
-  db:
-    image: mariadb
-    volumes:
-      - dbdata:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-
-volumes:
-  dbdata:
