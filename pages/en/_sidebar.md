@@ -1,0 +1,3 @@
+- <a href="/" wire:navigate>Home</a>
+- <a href="/some-page/hello-world" wire:navigate>Some Page</a>
+    - <a href="/some-page/hello-world" wire:navigate>Some Subpage</a>
