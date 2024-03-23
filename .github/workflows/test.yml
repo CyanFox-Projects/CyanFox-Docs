@@ -3,12 +3,11 @@ name: Test
 on:
   push:
     branches:
-      - v2
+      - master
       - develop
   pull_request:
     branches:
       - master
-      - v2
 
 jobs:
   test:
@@ -27,7 +26,7 @@ jobs:
 
       - name: Test
         run: |
-          cp .env.testing .env
+          cp .env.example .env
 
           curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
           /usr/local/bin/composer update --ignore-platform-req=ext-gd --ignore-platform-req=ext-intl --ignore-platform-req=ext-iconv
@@ -36,4 +35,4 @@ jobs:
           ./vendor/bin/sail composer update
           ./vendor/bin/sail npm install
           ./vendor/bin/sail npm run build
-          ./vendor/bin/sail test --env=testing
+          ./vendor/bin/sail test
