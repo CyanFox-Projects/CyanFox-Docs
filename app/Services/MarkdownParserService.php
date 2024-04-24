@@ -29,7 +29,6 @@ class MarkdownParserService
         if (!file_exists(base_path($file))) {
             cookie()->queue(cookie()->forget('language'));
             cookie()->queue(cookie()->forever('language', 'en'));
-            abort(404);
         }
 
         $contents = file_get_contents(base_path($file));
@@ -80,7 +79,7 @@ class MarkdownParserService
     {
         $language = request()->cookie('language', 'en');
         if (!str_starts_with($path, '/')) {
-            $path = '/'.$path;
+            $path = '/' . $path;
         }
         $filePath = '';
 
@@ -88,7 +87,7 @@ class MarkdownParserService
         if (!file_exists($directoryPath)) {
             cookie()->queue(cookie()->forget('language'));
             cookie()->queue(cookie()->forever('language', 'en'));
-            abort(404);
+            $directoryPath = base_path("pages/en");
         }
         $directory = new RecursiveDirectoryIterator($directoryPath, FilesystemIterator::SKIP_DOTS);
         $iterator = new RecursiveIteratorIterator($directory, RecursiveIteratorIterator::LEAVES_ONLY);
