@@ -21,7 +21,13 @@ class CheckLanguage
         if ($language) {
             App::setLocale($language);
 
-            return $next($request);
+            $response = $next($request);
+
+            if ($response instanceof \Illuminate\Http\Response) {
+                $response->withCookie(cookie()->forever('language', $language));
+            }
+
+            return $response;
         } else {
             App::setLocale(config('app.locale'));
             $response = $next($request);
